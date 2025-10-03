@@ -33,7 +33,7 @@ export const App = () => {
             data-cy="ClearButton"
             type="button"
             className="delete ml-3"
-            onClick={() => setSelectedGood(null)}
+            onClick={() => setSelectedGood('')}
           />
         </h1>
       )}
@@ -50,12 +50,12 @@ export const App = () => {
             >
               <td>
                 <button
-                  onClick={() => {
-                    setSelectedGood(selectedGood === good ? null : good);
-                  }}
+                  onClick={() =>
+                    setSelectedGood(selectedGood === good ? '' : good)
+                  }
                   data-cy={selectedGood === good ? 'RemoveButton' : 'AddButton'}
                   type="button"
-                  className={`button ${selectedGood === good && `is-info`}`}
+                  className={`button ${selectedGood === good ? 'is-info' : ''}`}
                 >
                   {selectedGood === good ? '-' : '+'}
                 </button>
